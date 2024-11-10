@@ -7,5 +7,5 @@ Some exam preparation resources for Azure certification
 - Install PowerShell: `brew upgrade powershell/tap/powershell`
 - Look up for the installed version: `$PSVersionTable.PSVersion`
 - Install azure CLI: `Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force`
-- Look up for installed version: `Get-Module -Name Az -ListAvailable`
-- Connect to azure account: `Connect-AzAccount`
+- Look up for an installed version: `Get-Module -Name Az -ListAvailable`
+- Connect to an azure account: `Connect-AzAccount`
