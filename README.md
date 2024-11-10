@@ -1,4 +1,4 @@
-# azure
+# Azure
 
 Some exam preparation resources for Azure certification
 
