@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GraphAPIConsoleApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84c38574c5f456f54f30d6cb4138fe973256cf66")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66ea4a218cfe30aa0689cc2ac1145369ad3a068d")]
 [assembly: System.Reflection.AssemblyProductAttribute("GraphAPIConsoleApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GraphAPIConsoleApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
