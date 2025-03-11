@@ -4,12 +4,12 @@ from azure.keyvault.secrets import SecretClient
 
 # Information required to authenticate using a Service Principal
 # can be retrieved by executing `az account list` in Azure CLI
-tenant_id = "84f1e4ea-8554-43e1-8709-f0b8589ea118"
-client_id = "b1433124-dcf0-42f5-bde7-c702709f7195"
-client_secret = "tJ28Q~FdQP444lOZNKxVhPWb~_k-tk7~fLoV6aVx"
+tenant_id = ""
+client_id = ""
+client_secret = ""
 
 # Information for the Key Vault
-keyVaultName = "labkeyvault123"
+keyVaultName = ""
 keyVaultUri = f"https://{keyVaultName}.vault.azure.net"
 
 # Get the application credentials
