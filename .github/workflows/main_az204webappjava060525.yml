@@ -25,7 +25,7 @@ jobs:
           distribution: 'microsoft'
 
       - name: Build with Maven
-        working-directory: "/az204javawebappdemo" # App source code path
+        working-directory: "az204javawebappdemo" # App source code path
         run: mvn clean install
 
       - name: Upload artifact for deployment job
