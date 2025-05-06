@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: az204javawebappdemo/target/az204javawebappdemo-0.0.1-SNAPSHOT.jar
+          path: az204javawebappdemo/target/*.jar
 
       - name: Bestätige Upload-Pfad
         run: ls -lh az204javawebappdemo/target
