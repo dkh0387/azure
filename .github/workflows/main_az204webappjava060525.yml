@@ -60,6 +60,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
+          app_location: "/az204javawebappdemo" # App source code path
           app-name: 'az204webappjava060525'
           slot-name: 'Production'
           package: '*.jar'
