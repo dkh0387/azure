@@ -28,11 +28,23 @@ jobs:
         working-directory: "az204javawebappdemo" # App source code path
         run: mvn clean install
 
-      - name: Upload artifact for deployment job
+      - name: Show contents of target/
+        run: ls -l az204javawebappdemo/target
+
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: '${{ github.workspace }}/az204javawebappdemo/target/*.jar'
+          path: az204javawebappdemo/target/*.jar
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: java-app
+          path: java-app
+        
+      - name: Show contents of java-app folder
+        run: ls -l java-app
 
   deploy:
     runs-on: ubuntu-latest
@@ -63,5 +75,6 @@ jobs:
         with:
           app-name: 'az204webappjava060525'
           slot-name: 'Production'
-          package: 'java-app/**/*.jar'
+          package: 'java-app/*.jar'
+
           
