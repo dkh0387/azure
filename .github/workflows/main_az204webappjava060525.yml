@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
+          path: '${{ github.workspace }}/az204javawebappdemo/target/*.jar'
 
   deploy:
     runs-on: ubuntu-latest
@@ -64,5 +64,5 @@ jobs:
           app_location: "/az204javawebappdemo" # App source code path
           app-name: 'az204webappjava060525'
           slot-name: 'Production'
-          package: '*.jar'
+          package: 'java-app/*.jar'
           
