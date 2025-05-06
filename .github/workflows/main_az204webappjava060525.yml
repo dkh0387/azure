@@ -37,6 +37,9 @@ jobs:
           name: java-app
           path: az204javawebappdemo/target/az204javawebappdemo-0.0.1-SNAPSHOT.jar
 
+      - name: Bestätige Upload-Pfad
+        run: ls -lh az204javawebappdemo/target
+
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
@@ -57,6 +60,9 @@ jobs:
       contents: read #This is required for actions/checkout
   
     steps:
+      - name: Zeige heruntergeladenes Artifact
+        run: find java-app -type f
+
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
@@ -75,6 +81,6 @@ jobs:
         with:
           app-name: 'az204webappjava060525'
           slot-name: 'Production'
-          package: 'java-app/target/az204javawebappdemo-0.0.1-SNAPSHOT.jar'
+          package: 'java-app/az204javawebappdemo-0.0.1-SNAPSHOT.jar'
 
           
