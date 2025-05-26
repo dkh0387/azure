@@ -30,5 +30,5 @@ jobs:
       - name: Deploy to Azure Function App
         uses: azure/functions-action@v1
         with:
-          app-name: az204pythonfnapp843
+          app-name: az204funcapp20250526
           package: ./az204pythonfunctionappdemo
