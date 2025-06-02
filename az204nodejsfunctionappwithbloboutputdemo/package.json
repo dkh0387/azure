@@ -1,0 +1,10 @@
+{
+  "name": "az204nodejsfunctionappwithbloboutputdemo",
+  "version": "1.0.0",
+  "main": "HttpExample/index.js",
+  "scripts": {
+    "start": "func start --verbose"
+  },
+  "dependencies": {}
+}
+
