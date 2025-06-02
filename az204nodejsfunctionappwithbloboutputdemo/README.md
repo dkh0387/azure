@@ -1,3 +1,8 @@
+# General
+
+1. We can initialize a new function by running `func init`. This will create a sceleton for the function
+2. We can create a new function by running `func new`
+
 # Running
 
 Change into the root directory
