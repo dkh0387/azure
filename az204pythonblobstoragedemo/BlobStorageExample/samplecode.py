@@ -56,7 +56,16 @@ class PythonBlobLab(object):
         print("Copy ID:", copy_properties['copy_id'])
         print("Copy status:", copy_properties['copy_status'])
 
+    def properties_operations(self):
+        blob_service_client = BlobServiceClient.from_connection_string(self.my_connection_string)
+        target_blob_client = blob_service_client.get_blob_client(container="targetcontainer", blob=self.source_file)
+
+        target_blob_properties = target_blob_client.get_blob_properties()
+        print(target_blob_properties)
+
+
 
 example = PythonBlobLab()
 # example.practice_operations()
-example.copy_operations()
+#example.copy_operations()
+example.properties_operations()
