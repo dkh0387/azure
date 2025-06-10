@@ -63,9 +63,14 @@ class PythonBlobLab(object):
         target_blob_properties = target_blob_client.get_blob_properties()
         print(target_blob_properties)
 
+    def set_metadata_operations(self):
+        blob_service_client = BlobServiceClient.from_connection_string(self.my_connection_string)
+        target_blob_client = blob_service_client.get_blob_client(container="targetcontainer", blob=self.source_file)
+        target_blob_client.set_blob_metadata({'CreatedBy': 'Denis Khaskin'})
 
 
 example = PythonBlobLab()
 # example.practice_operations()
-#example.copy_operations()
-example.properties_operations()
+# example.copy_operations()
+#example.properties_operations()
+example.set_metadata_operations()
