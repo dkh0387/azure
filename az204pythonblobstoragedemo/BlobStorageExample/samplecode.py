@@ -21,6 +21,7 @@ from azure.storage.blob import BlobServiceClient
 class PythonBlobLab(object):
     my_connection_string = "DefaultEndpointsProtocol=https;AccountName=az204storageacc20250602;AccountKey=hW7iboZG+G+0aNWhYTZqxIt5Jp9FbaFqUMiF1VqA0/yWYNbsGIjmOY8MMu9yH4wlyjFm0pq7iwDb+ASt1XSsbQ==;EndpointSuffix=core.windows.net"
     source_file = "BlobSample.txt"
+    source_container = "democontainer"
 
     def practice_operations(self):
         # Instantiate a BlobServiceClient using a connection string
@@ -33,7 +34,7 @@ class PythonBlobLab(object):
         my_blob_service_client = BlobServiceClient.from_connection_string(self.my_connection_string)
 
         # Instantiate a ContainerClient object and create the container.
-        my_container_client = my_blob_service_client.create_container("democontainer")
+        my_container_client = my_blob_service_client.create_container(self.source_container)
 
         # Instantiate a new BlobClient object
         my_blob_client = my_container_client.get_blob_client("blobforlab")
@@ -42,6 +43,20 @@ class PythonBlobLab(object):
         with open(self.source_file, "rb") as data:
             my_blob_client.upload_blob(data, blob_type="BlockBlob")
 
+    def copy_operations(self):
+        blob_service_client = BlobServiceClient.from_connection_string(self.my_connection_string)
+
+        target_blob_client = blob_service_client.get_blob_client(container="targetcontainer", blob=self.source_file)
+
+        source_blob_url = "https://az204storageacc20250602.blob.core.windows.net/{0}/blobforlab?sp=r&st=2025-06-10T16:57:39Z&se=2025-06-11T00:57:39Z&spr=https&sv=2024-11-04&sr=b&sig=3p63tpLpgKnRs0ez7ngqnRRv3y8Vx4udMFeV%2BRwJkfk%3D".format(
+            self.source_container)
+
+        copy_properties = target_blob_client.start_copy_from_url(source_blob_url)
+
+        print("Copy ID:", copy_properties['copy_id'])
+        print("Copy status:", copy_properties['copy_status'])
+
 
 example = PythonBlobLab()
-example.practice_operations()
+# example.practice_operations()
+example.copy_operations()
