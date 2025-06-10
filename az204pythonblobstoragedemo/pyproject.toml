@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "azure-blob-sample"
+version = "0.1.0"
+description = "Simple demo for uploading a file to Azure Blob Storage"
+authors = ["Denis Khaskin <denis.khaskin@codecentric.com>"]
+readme = "README.md"
+packages = [{ include = "BlobStorageExample" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+azure-storage-blob = "^12.19.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

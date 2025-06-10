@@ -14,3 +14,7 @@ Change into the root directory
     - change `"main": "<path-to>/index.js"`
     - run: `func start --verbose`
     - call local function url to trigger HTTPS
+
+# Publishing
+
+Run `func azure functionapp publish <name of your function app>`
