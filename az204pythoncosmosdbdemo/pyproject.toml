@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "cosmos-lab"
+version = "0.1.0"
+description = "Simple Azure Cosmos DB demo"
+authors = ["Denis Khaskin <denis.khaskin@codecentric.de>"]
+packages = [{include = "cosmos_lab"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+azure-cosmos = "^4.5.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
